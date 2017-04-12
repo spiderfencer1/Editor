@@ -9,6 +9,9 @@ body{
 	padding:0;
 	overflow:hidden;
 }
+#file{
+	background-color:#000000;
+}
 #text{
 	width:100%;
 	height:90%;
