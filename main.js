@@ -20,4 +20,15 @@ window.onload = () => {
  document.getElementsByTagName('button')[0].onclick = () => {
   download(document.getElementById('files').files[0].name,document.getElementById('editor').value);
  }
+ document.getElementById('editor').onkeydown = k => {
+  if(k.keyCode === 9){
+   const _this = document.getElementById('editor');
+   k.preventDefault();
+   start = _this.selectionStart;
+   end = _this.selectionEnd;
+   _this.value = _this.value.substring(0,start) + '\t' + _this.value.substring(end);
+   _this.selectionStart = _this.selectionEnd = start + 1;
+   return false;
+  }
+ }
 };
